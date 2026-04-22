@@ -1,0 +1,27 @@
+.counter-container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.display {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #4cfbb5;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: #1a1a1a;
+  color: white;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #4cfbb5;
+}
