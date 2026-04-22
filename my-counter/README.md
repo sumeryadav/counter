@@ -1,16 +1,60 @@
-# React + Vite
+# My Counter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small counter app built with React and Vite.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20.19.0 or newer
+- npm 10 or newer
 
-## React Compiler
+## Local development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Quality check
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run check
+```
+
+This runs linting and a production build so you can catch deployment issues before shipping.
+
+## Deployment
+
+### Vercel
+
+This project is ready for Vercel as a static Vite app.
+
+- Framework preset: `Vite`
+- Build command: `npm run build`
+- Output directory: `dist`
+
+The included [vercel.json](/D:/Javascript/Counter/my-counter/vercel.json) keeps SPA routes pointed at `index.html` and adds a few basic security headers.
+
+### GitHub Pages
+
+Use the deploy script after configuring the repository remote:
+
+```bash
+npm run deploy
+```
+
+That script builds with relative asset paths and publishes `dist` through `gh-pages`, which avoids broken assets when the app is served from a repository subpath.
+
+### Custom hosting
+
+For hosts that need a custom base path, Vite supports it directly:
+
+```bash
+vite build --base=/my-app/
+```
+
+## Included readiness updates
+
+- Production build works out of the box for root-hosted static deploys
+- GitHub Pages deploy uses relative asset paths
+- Vercel routing is configured for a single-page app
+- Basic metadata and security headers are included

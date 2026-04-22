@@ -2,11 +2,9 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  // 1. Initialize state at 0
   const [count, setCount] = useState(0);
 
-  // 2. Define helper functions
-  const increase = () => setCount(count + 1);
+  const increase = () => setCount((currentCount) => currentCount + 1);
   const decrement = () => {
   setCount(prevCount => Math.max(0, prevCount - 1));
 };
